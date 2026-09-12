@@ -6,11 +6,11 @@
 
 | STT | Họ và tên | Mã học viên | Vai trò trong nhóm (VD: facilitator, workflow, research, writer) |
 |-----|-----------|-------------|---------------------------------------------------------------|
-| 1   | Mai Hoàng Anh | 2A202602857 | Researcher                                                   |
-| 2   |  Lê Minh Hiếu |   2A202602828         |                                                               |
-| 3   | Nguyễn Thành Tiến |    2A202603003      |                                                               |
-| 4   |   Vũ Huy Đô  |   2A202602555         |                                                               |
-| 5   | Hoàng Văn Sơn |   2A202602375         |                                                               |
+| 1   |  Nguyễn Thành Tiến  | 2A202603003            |      Researcher                                                         |
+| 2   | 	Lê Minh Hiếu          |  2A202602828           |                                                               |
+| 3   |   Mai Hoàng Anh        |          2A202602857   |                                                               |
+| 4   | Hoàng Văn Sơn          |    2A202602375         |                                                               |
+| 5  | Vũ Huy Đô          | 2A202602555            |                                                               |
 
 **Candidate problem nhóm chọn (1 câu):**
 
@@ -23,9 +23,9 @@
 
 | # | Người đưa ra | Candidate problem | Người gặp vấn đề | Điểm nghẽn | Cảm nhận nhanh của nhóm |
 |---|---|---|---|---|---|
-| 1 | Mai Hoàng Anh | Khó ước lượng và nhập calo đồ ăn ngoài tiệm do thiếu dữ liệu chuẩn | Người thường xuyên ăn ngoài | Tìm món tương đương trên app và tự ước lượng định lượng bằng mắt | |
-| 2 | Mai Hoàng Anh | Nhập liệu bữa ăn tự nấu rất tốn thời gian do lặp lại nhiều thao tác | Người tự nấu ăn | Phải search và nhập định lượng lắt nhắt cho từng nguyên liệu | |
-| 3 | Mai Hoàng Anh | App không gợi ý thực đơn, người dùng phải tự suy nghĩ món ăn khớp số liệu | Người muốn giảm cân | Tính toán tổ hợp món ăn khớp calo/macro và nguyên liệu hiện có | |
+| 1 |Nguyễn Thành Tiến |Tài xế phải kiểm tra nhiều nguồn/group để hỏi xem trạm nào đang hoạt động hoặc còn chỗ | Tài xế xe điện|Thông tin về tình trạng trạm phân tán, không có một nguồn cập nhật đáng tin cậy ||
+| 2 |Nguyễn Thành Tiến |Tài xế không biết trước trạm nào đang đông hoặc sắp đầy, phải đến nơi mới biết có thể sạc hay không |Tài xế xe điện |Thiếu dự báo tình trạng sử dụng trạm và số cổng sạc còn trống | |
+| 3 |Nguyễn Thành Tiến |Khi trạm đang bảo trì hoặc quá tải, tài xế phải tự tìm trạm thay thế |Tài xế xe điện |Không có gợi ý trạm thay thế dựa trên khoảng cách, tình trạng hoạt động và mức độ đông | |
 | 4 | | | | | |
 | 5 | | | | | |
 | 6 | | | | | |
@@ -40,8 +40,7 @@
 
 | Cluster | Candidates included | Pattern chung | Ghi chú |
 |---|---|---|---|
-| A | Candidate 1 (Mai Hoàng Anh) | Khó khăn trong việc ước lượng và tracking calo đối với đồ ăn ngoài tiệm/vỉa hè do thiếu data. | AI Vision có tiềm năng lớn để giải quyết |
-| B | | | |
+| A |candidate 1 |Tài xế không biết trước khả năng sạc thực tế của trạm do thiếu thông tin realtime về tình trạng hoạt động, số cổng còn trống và mức độ đông |AI giúp dự đoán tình trạng đông và thời gian chờ tại thời điểm tài xế đến, đồng thời đề xuất trạm thay thế phù hợp.
 | C | | | |
 | D (nếu có) | | | |
 
@@ -109,7 +108,7 @@ Bằng chứng đính kèm (nếu có): `02-group-problem-statement-survey.png`,
 
 | Nguồn / tool / case | Link | Họ giải quyết bước nào? | Điểm mạnh | Khoảng trống / rủi ro | Bài học cho nhóm |
 |---|---|---|---|---|---|
-| | | | | | |
+|ChargePoint App |ChargePoint Driver App – Station availability |Tìm trạm, lọc trạm Available, xem real-time station status, popular charging times và thông tin địa điểm |Kết hợp real-time status + historical/popular charging times, giúp tài xế lựa chọn trạm |“Popular charging times” chủ yếu mang tính tham khảo; chưa nhất thiết dự báo chính xác tình trạng đông tại thời điểm tài xế sắp đến |Có thể kết hợp trạng thái realtime + lịch sử + thời gian di chuyển để dự báo mức độ đông khi tài xế đến |
 | | | | | | |
 | | | | | | |
 
