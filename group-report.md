@@ -201,18 +201,18 @@ Fallback: Nếu AI gợi ý không sát thực tế thị trường hoặc thi�
 ### 6.0. Ma trận độ phù hợp (suy nghĩ nhanh, không thay quyết định cuối)
 
 - Độ mơ hồ: [ ] Thấp (có đúng/sai rõ) / [x] Cao (nhiều cách trả lời vẫn OK) — Vì sao: Không có một chuyên ngành nào "đúng" cho tất cả; gợi ý phụ thuộc vào profile, sở thích và mục tiêu cá nhân của từng sinh viên — nhiều profile khác nhau đều có thể hợp lý.
-- Độ phức tạp: [ ] Thấp (1-2 bước) / [x] Cao (3+ bước/nguồn, phụ thuộc nhau) — Vì sao: Cần phân tích profile sinh viên (nhiều chiều: sở thích, điểm mạnh, mục tiêu), đối chiếu với đặc thù từng chuyên ngành và dữ liệu thị trường tuyển dụng — 3+ nguồn thông tin phụ thuộc nhau.
+- Độ phức tạp: [x] Thấp-vừa (nhiều bước nhưng input và output xác định trước) / [ ] Cao (cần tự lập kế hoạch, gọi nhiều tool và xử lý nhánh động) — Vì sao: Pilot dùng profile do sinh viên cung cấp và bộ tiêu chí/roadmap chuyên ngành chuẩn bị trước; chưa cần AI tự thu thập dữ liệu hay tự quyết định bước tiếp theo.
 
 **Bài toán nhóm nằm ở ô nào:**
 
 ```text
-Độ mơ hồ CAO + Độ phức tạp CAO → Ô phù hợp nhất với Agent — cần AI tự thu thập dữ liệu đa nguồn, phân tích cá nhân hoá và có thể hỏi thêm SV trong quá trình.
+Độ mơ hồ CAO + Độ phức tạp THẤP-VỪA → Workflow phù hợp nhất — AI hỗ trợ phân tích profile và tạo gợi ý, còn sinh viên và mentor kiểm tra, quyết định.
 ```
 
 **Vì sao (2-3 câu):**
 
 ```text
-Bài toán có độ mơ hồ cao vì không có đáp án chuyên ngành nào “đúng” tuyệt đối — gợi ý phụ thuộc hoàn toàn vào profile cá nhân. Độ phức tạp cao vì cần tổng hợp nhiều nguồn (profile sinh viên, đặc thù từng ngành, dữ liệu thị trường tuyển dụng địa phương) và có thể cần hỏi thêm SV khi thông tin chưa đủ. Agent phù hợp hơn Workflow vì có thể tự lấy dữ liệu thị trường động, điều chỉnh gợi ý khi có thêm context, và xử lý các nhánh khác nhau tuyỳ profile.
+Bài toán có độ mơ hồ cao vì không có đáp án chuyên ngành nào “đúng” tuyệt đối — gợi ý phụ thuộc vào profile cá nhân. Tuy nhiên, trong scope pilot, input, các bước xử lý và output đều xác định trước: sinh viên điền profile, AI phân tích theo bộ tiêu chí đã chuẩn bị, sau đó sinh viên và mentor review. Vì vậy Workflow phù hợp hơn Agent; Agent chỉ đáng cân nhắc khi cần tự thu thập dữ liệu thị trường động hoặc xử lý nhiều nhánh ngoài scope pilot.
 ```
 
 ### 6.1. So sánh Rule / Workflow / Agent (so trên cùng 1 bài)
@@ -221,31 +221,31 @@ Bài toán có độ mơ hồ cao vì không có đáp án chuyên ngành nào �
 |---|---|---|---|---|
 | **Rule** | Template self-assessment cố định + bảng so sánh chuyên ngành tĩnh | Đủ nếu sinh viên chỉ cần thông tin tổng quan và tự điền checklist | Không cá nhân hoá; không phân tích được profile sâu; sinh viên vẫn phải tự kết luận | Không chọn làm toàn bộ; dùng để cấu trúc form input của sinh viên |
 | **Workflow** | SV input profile → AI phân tích & match → AI xuất gợi ý có lý giải → SV review → cross-check với mentor | Hợp vì workflow tuyến tính, input rõ (profile SV), output rõ (top 2-3 gợi ý), AI chỉ hỗ trợ bước phân tích | AI gợi ý sai thực tế thị trường địa phương; không cập nhật xu hướng tuyển dụng real-time | **Chọn** — dùng cho bước phân tích profile và tạo gợi ý có lý giải |
-| **Agent** | Agent tự tìm data thị trường, hỏi thêm SV, so sánh nhiều nguồn, tự cập nhật gợi ý theo thời gian | Chỉ cần nếu muốn real-time job market data và workflow nhiều nhánh phức tạp | Phụ thuộc nhiều API bên ngoài, nhiều permission, khó kiểm soát chất lượng output | Chưa chọn — workflow hiện tại không cần AI tự lập kế hoạch động |
+| **Agent** | Agent tự tìm data thị trường, hỏi thêm SV, so sánh nhiều nguồn, tự cập nhật gợi ý theo thời gian | Chỉ cần nếu muốn real-time job market data và workflow nhiều nhánh phức tạp | Phụ thuộc nhiều API bên ngoài, nhiều permission, khó kiểm soát chất lượng output | Chưa chọn — vượt scope pilot và chưa có bằng chứng cần tự lập kế hoạch động |
 
 **5 câu hỏi chốt (trả lời câu đầy đủ):**
 1. Rule có giải được 70-80% case không? **Không** — template tĩnh không cá nhân hoá được và không có data thị trường địa phương; sinh viên vẫn phải tự kết luận.
-2. Các bước có đi thẳng một đường không hay phải rẽ nhánh? **Có rẽ nhánh** — nếu SV khai thiếu thông tin, Agent cần hỏi thêm; nếu data thị trường thiếu, Agent cần tự tìm thêm — không có một đường thẳng cố định.
-3. Có thật sự cần Agent tự lập kế hoạch + gọi tool không? **Có** — cần tự lấy data thị trường địa phương, tự hỏi thêm SV khi thiếu context, tự điều chỉnh gợi ý theo thông tin mới — Workflow thuần túy không đáp ứng được.
+2. Các bước có đi thẳng một đường không hay phải rẽ nhánh? **Trong scope pilot, đi theo một workflow chính** — form bắt buộc giúp giảm input thiếu; trường hợp thiếu thông tin được xử lý bằng bước bổ sung thủ công, không yêu cầu Agent tự rẽ nhánh.
+3. Có thật sự cần Agent tự lập kế hoạch + gọi tool không? **Chưa** — pilot dùng profile sinh viên và dữ liệu chuyên ngành chuẩn bị trước; nếu cần thêm context, sinh viên hoặc mentor bổ sung thủ công. Workflow đáp ứng đủ mục tiêu kiểm chứng ban đầu.
 4. Nếu AI sai, ai phát hiện đầu tiên và sửa trong bao lâu? **Sinh viên + mentor** phát hiện khi cross-check — trong vòng 30-60 phút, hậu quả chấp nhận được vì SV chưa cam kết chọn ngành.
-5. Có hạ được từ Agent → Workflow → Rule không? **Có** — pilot có thể bắt đầu bằng Workflow bán thủ công để kiểm chứng nhanh, nhưng độ phức tạp và độ mơ hồ cao cho thấy Agent sẽ tạo gợi ý chất hơn dài hạn.
+5. Có hạ được từ Agent → Workflow → Rule không? **Có** — pilot bắt đầu bằng Workflow bán thủ công; chỉ nâng lên Agent nếu dữ liệu và nhu cầu thực tế chứng minh cần tự gọi tool hoặc xử lý nhánh động.
 
 **Mức chọn:**
 
 ```text
-Agent
+Workflow
 ```
 
 **Vì sao chọn (3-4 câu):**
 
 ```text
-Agent phù hợp vì bài toán có độ mơ hồ cao (không có đáp án đúng/sai) và độ phức tạp cao (cần tổng hợp đa nguồn, có nhánh). Agent có thể tự lấy dữ liệu thị trường tuyển dụng địa phương, hỏi thêm SV khi thông tin chưa đủ, và điều chỉnh gợi ý theo từng profile mà Workflow thuần túy không làm được. Sinh viên và mentor vẫn là người review và ra quyết định cuối — Agent chỉ hỗ trợ bước phân tích và cá nhân hoá gợi ý.
+Workflow phù hợp vì bài toán có độ mơ hồ cao nhưng pilot vẫn có input, bước xử lý và output xác định trước. Workflow cho phép dùng form profile, dữ liệu chuyên ngành chuẩn bị trước và AI để tạo gợi ý có lý giải, trong khi sinh viên và mentor review, ra quyết định cuối. Agent chưa cần thiết vì pilot không yêu cầu tự gọi nhiều tool, tự thu thập dữ liệu động hoặc tự lập kế hoạch.
 ```
 
 **Vì sao không chọn mức đơn giản hơn (2-3 câu):**
 
 ```text
-Rule không đủ vì không cá nhân hoá và không giải bottleneck. Workflow được nhưng thiếu khả năng xử lý khi dữ liệu SV khai chưa đủ hoặc khi cần data thị trường địa phương mà SV không có — đời hỏi AI phải tự đi tìm thêm. Với độ phức tạp của bài (nhiều nguồn, nhiều nhánh), Agent là mức phù hợp nhất.
+Rule không đủ vì không cá nhân hoá và không giải quyết tốt bottleneck. Workflow đáp ứng được pilot vì sinh viên cung cấp profile, AI phân tích theo tiêu chí đã chuẩn bị, rồi sinh viên và mentor kiểm tra. Agent có thể là hướng nâng cấp sau khi có bằng chứng rằng cần dữ liệu thị trường động hoặc nhiều nhánh xử lý hơn.
 ```
 
 ### 6.2. Problem Statement v1 (v0 sửa chặt hơn + 3 field cuối)
@@ -259,7 +259,7 @@ Rule không đủ vì không cá nhân hoá và không giải bottleneck. Workfl
 | **Success Metric** | ≥ 70% SV thử giải pháp xác định được chuyên ngành trong ≤ 2 giờ (ngắn hạn); ≥ 80% còn theo chuyên ngành đó sau 3 tháng (dài hạn); không tăng số câu hỏi mơ hồ SV phải hỏi lại mentor. |
 | **Boundary** (làm / không làm) | Làm: phân tích profile, tạo gợi ý có lý giải, giúp SV chuẩn bị câu hỏi cho mentor. Không làm: tự quyết định thay SV, thay thế buổi tư vấn với mentor, bịa thông tin thị trường không có nguồn. |
 | **AI intervention point** (can thiệp sau bước nào, trước bước nào) | Sau khi SV hoàn thành form input profile (bước 1), trước khi SV bắt đầu phân vân và tự so sánh chuyên ngành thủ công (bước 3 cũ). |
-| **Mức chọn** (Rule / Workflow / Agent + 1 câu vì sao) | **Agent** — vì bài có độ phức tạp cao và độ mơ hồ cao, cần AI tự thu thập dữ liệu đa nguồn, xử lý đa nhánh và cá nhân hoá sâu hơn Workflow thuần túy. |
+| **Mức chọn** (Rule / Workflow / Agent + 1 câu vì sao) | **Workflow** — vì pilot có input và các bước xác định trước, AI chỉ hỗ trợ phân tích profile và tạo gợi ý; chưa cần tự gọi tool hay tự lập kế hoạch. |
 | **Rủi ro & người thật kiểm tra** (rủi ro lớn nhất + ai kiểm tra bằng cách nào) | Rủi ro: AI gợi ý không sát thực tế thị trường địa phương hoặc overfit theo một profile mẫu. Người kiểm tra: sinh viên review gợi ý và mentor/anh chị trong ngành xác nhận trước khi SV cam kết chọn. |
 
 ### 6.3. Final decision
@@ -288,9 +288,9 @@ Problem rõ (10/10 SV xác nhận), workflow và metric đã được định ng
 **Nếu Go — pilot nhỏ nhất (data nào, chạy tay ra sao, đo 3 số nào):**
 
 ```text
-Data: form input profile của 5-10 sinh viên IT tình nguyện (sở thích, điểm mạnh, mục tiêu, môn học yêu thích).
+Data: form input profile của 5-10 sinh viên IT tình nguyện (sở thích, điểm mạnh, mục tiêu, môn học yêu thích) và bộ tiêu chí/roadmap chuyên ngành được chuẩn bị trước.
 Chạy tay: SV điền form → paste vào prompt chuẩn đã chuẩn bị → AI xuất gợi ý → SV review → gặp mentor 30'
-3 số đo: (1) Thời gian từ điền form đến có gợi ý (target ≤ 10 phút), (2) Tỉ lệ SV thấy gợi ý hữu ích (≥ 70%), (3) Tỉ lệ SV vẫn theo chuyên ngành đã chọn sau 4 tuần (≥ 80%).
+3 số đo: (1) Thời gian từ điền form đến có gợi ý (target ≤ 10 phút), (2) Tỉ lệ SV thấy gợi ý hữu ích (≥ 70%), (3) Tỉ lệ SV vẫn theo chuyên ngành đã chọn sau 4 tuần (chỉ báo sớm, chưa thay cho metric 3 tháng).
 ```
 
 **Nếu Not Yet — cần validate gì trước:**
