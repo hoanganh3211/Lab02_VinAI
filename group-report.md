@@ -6,11 +6,11 @@
 
 | STT | Họ và tên | Mã học viên | Vai trò trong nhóm (VD: facilitator, workflow, research, writer) |
 |-----|-----------|-------------|---------------------------------------------------------------|
-| 1   | Mai Hoàng Anh | 2A202602857 | Researcher                                                   |
-| 2   |  Lê Minh Hiếu |   2A202602828         |                                                               |
-| 3   | Nguyễn Thành Tiến |    2A202603003      |                                                               |
-| 4   |   Vũ Huy Đô  |   2A202602555         |                                                               |
-| 5   | Hoàng Văn Sơn |   2A202602375         |                                                               |
+| 1   | Mai Hoàng Anh | 2A202602857 |   Researcher                                                 |
+| 2   | Lê Minh Hiếu | 2A202602828 |     Facilitator                                               |
+| 3   | Nguyễn Thành Tiến | 2A202603003 |     Workflow                                                  |
+| 4   | Vũ Huy Đô | 2A202602555 |     Writer                                                    |
+| 5   | Hoàng Văn Sơn | 2A202602375 |    Researcher                                                 |
 
 **Candidate problem nhóm chọn (1 câu):**
 
@@ -26,9 +26,9 @@
 | 1 | Mai Hoàng Anh | Khó ước lượng và nhập calo đồ ăn ngoài tiệm do thiếu dữ liệu chuẩn | Người thường xuyên ăn ngoài | Tìm món tương đương trên app và tự ước lượng định lượng bằng mắt | |
 | 2 | Mai Hoàng Anh | Nhập liệu bữa ăn tự nấu rất tốn thời gian do lặp lại nhiều thao tác | Người tự nấu ăn | Phải search và nhập định lượng lắt nhắt cho từng nguyên liệu | |
 | 3 | Mai Hoàng Anh | App không gợi ý thực đơn, người dùng phải tự suy nghĩ món ăn khớp số liệu | Người muốn giảm cân | Tính toán tổ hợp món ăn khớp calo/macro và nguyên liệu hiện có | |
-| 4 | | | | | |
-| 5 | | | | | |
-| 6 | | | | | |
+| 4 | Hoàng Văn Sơn | Đối soát & chia tiền chi tiêu chung phòng trọ từ hóa đơn viết tay và bill chuyển khoản | Sinh viên ở ghép phòng trọ | Chủ nhà gửi hóa đơn viết tay (điện, nước, rác), 1 người đóng gom rồi tính toán chia lẻ, thu lại từng người | Rất thực tế, xảy ra hàng tháng, nhưng dùng OCR + Rule là giải quyết được |
+| 5 | Hoàng Văn Sơn | Kiểm tra và rà soát bài tập nhóm theo đúng Rubric & yêu cầu của giảng viên | Sinh viên làm bài tập nhóm | Nhóm trưởng/thành viên phải đọc kỹ slide, file yêu cầu, Rubric 10-15 trang rồi soi từng phần bài làm | Cần thiết nhưng bị giới hạn bởi định dạng file đầu vào và cấu trúc bài làm |
+| 6 | Hoàng Văn Sơn | Lục tìm lại tài liệu học tập & thông báo deadline bị trôi trong các nhóm Zalo môn học | Sinh viên IT | Mỗi môn 1 nhóm Zalo 40-50 người, tin nhắn trôi nhanh, file/ảnh bị hết hạn không tải lại được | Nỗi đau hàng ngày nhưng Zalo API đóng, rất khó can thiệp kỹ thuật |
 | 7 | | | | | |
 | 8 | | | | | |
 | 9 | | | | | |
@@ -41,7 +41,7 @@
 | Cluster | Candidates included | Pattern chung | Ghi chú |
 |---|---|---|---|
 | A | Candidate 1 (Mai Hoàng Anh) | Khó khăn trong việc ước lượng và tracking calo đối với đồ ăn ngoài tiệm/vỉa hè do thiếu data. | AI Vision có tiềm năng lớn để giải quyết |
-| B | | | |
+| B | Candidate 4 (Hoàng Văn Sơn) | Khó khăn trong việc tổng hợp, rà soát và hệ thống hóa thông tin từ nhiều nguồn rời rạc (hóa đơn viết tay, tin nhắn Zalo, file PDF) để phục vụ một mục tiêu chung (chia tiền, nộp bài tập, tìm lại tài liệu). | AI có thể giúp tự động hóa việc trích xuất và sắp xếp dữ liệu từ các định dạng phi cấu trúc. |
 | C | | | |
 | D (nếu có) | | | |
 
@@ -57,7 +57,7 @@
 
 | Candidate | Actor rõ | Workflow rõ | Pain có evidence | Impact đo được | Làm trong lab | So sánh R/W/A được | Nhóm hiểu domain | Tổng |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| | | | | | | | | |
+| **Candidate C4 (Chia tiền phòng trọ)** | 5 | 4 | 4 | 4 | 4 | 3 | 5 | **29** |
 | | | | | | | | | |
 | | | | | | | | | |
 
@@ -109,7 +109,7 @@ Bằng chứng đính kèm (nếu có): `02-group-problem-statement-survey.png`,
 
 | Nguồn / tool / case | Link | Họ giải quyết bước nào? | Điểm mạnh | Khoảng trống / rủi ro | Bài học cho nhóm |
 |---|---|---|---|---|---|
-| | | | | | |
+| Roadmap.sh Backend | https://roadmap.sh/backend | Cung cấp sơ đồ tri thức Backend tổng quan | Cực kỳ đầy đủ, chuẩn hóa quốc tế, cập nhật liên tục | Quá đồ sộ (>100 node), gây ngợp cho tân binh, không cá nhân hóa theo năng lực | Chỉ lấy khung cốt lõi 12 tuần, không ép sinh viên học toàn bộ node cùng lúc |
 | | | | | | |
 | | | | | | |
 
@@ -135,13 +135,11 @@ Dán workflow hoặc link file: `02-group-problem-statement-workflow.png/pdf/md`
 
 | Bước | Actor | Input | Output | Thời gian / tần suất | Ghi chú (handoff? bottleneck?) |
 |---|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
-| 6 | | | | | |
-| 7 | | | | | |
+| 1. Tìm kiếm thông tin đa kênh | Sinh viên năm 2-3 | Từ khóa tìm kiếm, thắc mắc trên Facebook/Voz/Reddit/YouTube | Ma trận 5-7 hướng đi (Frontend, Backend, AI/Data, Mobile, DevOps) | 2 tuần (14 ngày); làm 1-2 tiếng mỗi tối | Handoff: Tự lưu hàng chục link bài viết mâu thuẫn nhau; bắt đầu hoang mang |
+| 2. Học thử dàn trải (Tutorial Hell) | Sinh viên | 3-5 khóa học miễn phí trên YouTube/Udemy (Python cơ bản, HTML/CSS, Java, ML) | Code theo tutorial (máy tính, to-do list, vẽ giao diện cơ bản) | 2 tháng (60 ngày); học 2-3 tiếng/ngày | Handoff: Dự án mẫu lưu rải rác trên ổ cứng; biết mỗi thứ một tí nhưng không làm chủ được cái nào |
+| 3. Tự đánh giá năng lực & đối chiếu thị trường | Sinh viên | Điểm các môn cơ sở ngành (OOP, CSDL, Giải thuật) + Tin tuyển dụng Intern/Fresher trên ITviec/TopCV | Danh sách băn khoăn: "Học cái này có xin được việc?", "Mình có đủ giỏi tư duy dữ liệu/logic để làm Backend?" | 1 tháng (30 ngày); lặp lại liên tục | **BOTTLENECK CHÍNH**: Không có công cụ đánh giá khách quan độ tương thích năng lực; sợ chọn sai; trì hoãn và mất phương hướng |
+| 4. Chốt hướng Backend theo cảm tính | Sinh viên | Lời khuyên chung chung từ 1-2 tiền bối hoặc xu hướng bạn bè trong lớp | Quyết định chốt theo Backend (do ghét vẽ CSS giao diện, thích logic dữ liệu) | 1 tuần (7 ngày) | Handoff: Chốt về mặt tư tưởng nhưng hoang mang không biết bắt đầu học từ đâu |
+| 5. Tự bơi trong Roadmap Backend đồ sộ | Sinh viên | Roadmap.sh Backend với hơn 100 node kiến thức (Docker, Kafka, Redis, gRPC...) | Danh sách tài liệu ngổn ngang, học lan man công nghệ nâng cao trong khi hổng kiến thức cốt lõi | 1 tháng (30 ngày) | Handoff: Choáng ngợp kiến thức, lỡ mất kỳ ứng tuyển thực tập sinh năm 3 |
 
 **Bottleneck chính (2-3 câu):**
 
