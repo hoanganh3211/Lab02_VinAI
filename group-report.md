@@ -109,14 +109,14 @@ Bằng chứng đính kèm (nếu có): `02-group-problem-statement-survey.png`,
 
 | Nguồn / tool / case | Link | Họ giải quyết bước nào? | Điểm mạnh | Khoảng trống / rủi ro | Bài học cho nhóm |
 |---|---|---|---|---|---|
-| | | | | | |
-| | | | | | |
+| CareerExplorer | careerexplorer.com | Khám phá & định vị ngách nghề nghiệp chung. | Dùng mô hình Big 5 + Holland Code + ML để phân loại mức độ phù hợp. | Đánh giá tĩnh, phải làm test 30-90p gây mệt mỏi. Không chạm đến các siêu ngách IT (như MLOps, AI Agent Dev). | Cần xây dựng trải nghiệm tư vấn động, tương tác nhanh gọn và chuyên sâu vào các ngách hẹp của ngành IT thay vì bài test tĩnh. |
+| AI Roadmap Generator | roadmap.sh | Giai đoạn Lập kế hoạch (sau khi đã chốt ngách). | Dùng AI sinh lộ trình cá nhân hóa, có AI coach đi kèm. | Giả định user đã biết mình muốn làm gì. Không thể tư vấn chọn ngách nếu user chỉ có đầu vào mơ hồ (VD: "thích toán"). | Nhóm nên xây dựng AI Agent đóng vai trò tư vấn tiền đề giúp sinh viên khám phá ngách trước khi chuyển sang bước lập lộ trình. |
 | | | | | | |
 
 **Research takeaway (2-3 câu — nên build gì / không build gì):**
 
 ```text
-
+Nên build một AI Agent tương tác động đóng vai trò tư vấn tiền đề để giúp sinh viên nhận diện điểm mạnh, sở thích và khám phá các siêu ngách IT. Không nên build lại tính năng tự tạo lộ trình học chi tiết (Roadmap) mà có thể tập trung giải quyết bài toán "tìm ngách" trước.
 ```
 
 > Lưu ý: không dùng số liệu AI đưa nếu không verify được link chính thức. Ghi rõ giả định chưa chắc.
