@@ -6,4 +6,3 @@ link dis: https://discord.gg/XZaVrwTU2
  
 **Hạn hoàn thành: 22h00 12/09/2026**
 
-- 
